@@ -49,8 +49,7 @@ class TestBloc extends ExBloc<TestEvent, TestState> {
 ```dart
 class TestEvent extends ExEvent<TestState, TestBloc> {
   @override
-  Stream<TestState> call(
-      ExStore store, TestBloc bloc) async* {
+  Stream<TestState> call(ExStore store, TestBloc bloc) async* {
     yield TestState(afterInitial: true);
   }
 }
