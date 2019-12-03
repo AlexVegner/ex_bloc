@@ -76,7 +76,7 @@ final store = ExStore.instance;
 final testState = store.getState<TestState>();
 ```
 
-# Relesect usage
+# Reselect usage
 
 [Reselect](https://pub.dev/packages/reselect) can be used if needed
 

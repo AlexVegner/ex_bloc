@@ -41,3 +41,15 @@
 ## [0.1.7] - Update readme
 
 * Update readme
+
+## [0.1.8] - Update readme
+
+* Update readme
+
+## [0.1.9] - Update readme
+
+* Update readme
+
+## [0.1.10] - Update readme
+
+* Update readme
