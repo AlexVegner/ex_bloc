@@ -1,8 +1,10 @@
 name: ex_bloc
-description: A new Flutter package project.
-version: 0.0.1
+description: ExBloc provide simple way to organize bloc middleware and dispatch events.
+version: 0.1.3
 author: Alex Vegner <alexvegner@gmail.com>
-homepage: https://softintouch.com/
+repository: https://github.com/AlexVegner/ex_bloc
+issue_tracker: https://github.com/AlexVegner/ex_bloc/issues
+homepage: https://github.com/AlexVegner/ex_bloc
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -21,7 +23,7 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
-flutter:
+#flutter:
 
   # To add assets to your package, add an assets section, like this:
   # assets:

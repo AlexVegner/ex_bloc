@@ -3,10 +3,12 @@ import 'package:bloc/bloc.dart';
 import './ex_event.dart';
 import './ex_store.dart';
 
-abstract class ExBloc<Event extends ExEvent, State, SModel> extends Bloc<Event, State>
-    implements ExEventHandler {
+abstract class ExBloc<Event extends ExEvent, State, SModel>
+    extends Bloc<Event, State> implements ExEventHandler {
   final SModel _sm;
-  ExBloc(SModel sm): _sm = sm, super() {
+  ExBloc(SModel sm)
+      : _sm = sm,
+        super() {
     ExStore.instance.add<State>(this);
   }
 
@@ -27,4 +29,8 @@ abstract class ExBloc<Event extends ExEvent, State, SModel> extends Bloc<Event, 
   Stream<State> mapEventToState(ExEvent event) async* {
     yield* event.call(ExStore.instance, state, _sm);
   }
+}
+
+class EmptyServiceModel {
+  const EmptyServiceModel();
 }
