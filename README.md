@@ -32,11 +32,8 @@ class TestState {
 
 `ExBloc` does not contain business logic.
 
-`ServiceModel` should contain third party dependencies or `EmptyServiceModel` if there are no third party dependencies.
-
 ```dart
-class TestBloc extends ExBloc<TestEvent, TestState, EmptyServiceModel> {
-  TestBloc(EmptyServiceModel sm) : super(sm);
+class TestBloc extends ExBloc<TestEvent, TestState> {
 
   @override
   TestState get initialState => TestState.initial();
@@ -50,10 +47,10 @@ class TestBloc extends ExBloc<TestEvent, TestState, EmptyServiceModel> {
 `ExStore` provide ability to dispatch other events or get other states. 
 
 ```dart
-class TestEvent extends ExEvent<TestState, EmptyServiceModel> {
+class TestEvent extends ExEvent<TestState, TestBloc> {
   @override
   Stream<TestState> call(
-      ExStore store, TestState state, EmptyServiceModel sm) async* {
+      ExStore store, TestBloc bloc) async* {
     yield TestState(afterInitial: true);
   }
 }

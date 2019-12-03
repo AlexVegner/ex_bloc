@@ -1,3 +1,12 @@
+## 0.2.1
+
+* Minor changes
+
+## 0.2.0
+
+* Critical state fix
+* Remove ServiceModel interface
+
 ## 0.1.13
 
 * Update changelog

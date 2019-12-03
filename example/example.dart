@@ -2,7 +2,7 @@ import 'package:ex_bloc/ex_bloc.dart';
 
 main() async {
   final store = ExStore.instance;
-  final bloc = TestBloc(EmptyServiceModel());
+  final bloc = TestBloc();
   print('afterInitial: ${bloc.state.afterInitial}');
   store.dispatch(TestEvent()); // or TestEvent().dispatch();
   await Future.delayed(Duration(seconds: 1));
@@ -19,16 +19,15 @@ class TestState {
   }
 }
 
-class TestEvent extends ExEvent<TestState, EmptyServiceModel> {
+class TestEvent extends ExEvent<TestState, TestBloc> {
   @override
   Stream<TestState> call(
-      ExStore store, TestState state, EmptyServiceModel sm) async* {
+      ExStore store, TestBloc bloc) async* {
     yield TestState(afterInitial: true);
   }
 }
 
-class TestBloc extends ExBloc<TestEvent, TestState, EmptyServiceModel> {
-  TestBloc(EmptyServiceModel sm) : super(sm);
+class TestBloc extends ExBloc<TestEvent, TestState> {
 
   @override
   TestState get initialState => TestState.initial();
