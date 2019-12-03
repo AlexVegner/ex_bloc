@@ -1,55 +1,67 @@
-## [0.0.1] - Initial release.
+## 0.1.13
 
-* Initial release 
+* Update changelog
 
-## [0.0.2] - Fix description
+## 0.1.12
 
-* Fix description 
+* Update changelog
 
-## [0.0.3] - Add EmptyServiceModel
+## 0.1.11
 
-* Add EmptyServiceModel
+* Update changelog
 
-## [0.1.0] - Dev Preview 1
+## 0.1.10
 
-* Dev Preview 1
+* Update readme
 
-## [0.1.1] - Minor changes
+## 0.1.9
+
+* Update readme
+
+## 0.1.8
+
+* Update readme
+
+## 0.1.7
+
+* Update readme
+
+## 0.1.6
+
+* Update readme
+
+## 0.1.5
 
 * Minor changes
 
-## [0.1.2] - Remove Flutter dependencies
-
-* Remove Flutter dependencies
-
-## [0.1.3] - Minor changes
-
-* Minor changes
-
-## [0.1.4] - Update readme and license
+## 0.1.4
 
 * Update readme and license
 
-## [0.1.5] - Minor changes
+## 0.1.3
 
 * Minor changes
 
-## [0.1.6] - Update readme
+## 0.1.2
 
-* Update readme
+* Remove Flutter dependencies
 
-## [0.1.7] - Update readme
+## 0.1.1
 
-* Update readme
+* Minor changes
 
-## [0.1.8] - Update readme
+## 0.1.0
 
-* Update readme
+* Dev Preview 1
 
-## [0.1.9] - Update readme
+## 0.0.3
 
-* Update readme
+* Add EmptyServiceModel
 
-## [0.1.10] - Update readme
+## 0.0.2
 
-* Update readme
+* Fix description 
+
+## 0.0.1
+
+* Initial release 
