@@ -4,9 +4,10 @@ main() async {
   final store = ExStore.instance;
   final bloc = TestBloc(EmptyServiceModel());
   print('afterInitial: ${bloc.state.afterInitial}');
-  store.dispatch(TestEvent());
+  store.dispatch(TestEvent()); // or TestEvent().dispatch();
   await Future.delayed(Duration(seconds: 1));
   print('afterInitial: ${bloc.state.afterInitial}');
+  store.getState<TestState>();
 }
 
 class TestState {
