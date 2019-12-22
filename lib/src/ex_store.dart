@@ -18,6 +18,10 @@ class ExStore {
 
   final List<ExEventHandler> handlers = [];
 
+  void dispatchAll(List<ExEvent> events) {
+    events.forEach((e) => dispatch(e));
+  }
+
   void dispatch(ExEvent event) {
     if (enabled) {
       stateMap.forEach((key, bloc) {
@@ -38,5 +42,5 @@ class ExStore {
 }
 
 abstract class ExEventHandler {
-  handleEvent(ExEvent event);
+  void handleEvent(ExEvent event);
 }

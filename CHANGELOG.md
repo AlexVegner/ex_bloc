@@ -1,3 +1,15 @@
+## 0.2.5
+
+* Minor changes
+
+## 0.2.4
+
+* Add dispatchAll for ExStore
+
+## 0.2.3
+
+* Add initialEvents for ExBloc
+
 ## 0.2.2
 
 * Update readme

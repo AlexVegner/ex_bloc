@@ -7,7 +7,14 @@ abstract class ExBloc<Event extends ExEvent, State> extends Bloc<Event, State>
     implements ExEventHandler {
   ExBloc() : super() {
     ExStore.instance.add<State>(this);
+    if (initialEvents.isNotEmpty) {
+      initialEvents.forEach((e) {
+        ExStore.instance.dispatch(e);
+      });
+    }
   }
+
+  List<Event> get initialEvents => [];
 
   @override
   Future<void> close() {
@@ -16,7 +23,7 @@ abstract class ExBloc<Event extends ExEvent, State> extends Bloc<Event, State>
   }
 
   @override
-  handleEvent(ExEvent event) {
+  void handleEvent(ExEvent event) {
     if (event is Event) {
       add(event);
     }
