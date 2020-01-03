@@ -1,3 +1,17 @@
+## 0.2.8
+
+* Move to event stream
+* Add method on<Event> for ExStore
+* Add method wait<Evebt> for ExStore
+
+## 0.2.7
+
+* Move to dart 2.6
+
+## 0.2.6
+
+* Update with block 3.0.0
+
 ## 0.2.5
 
 * Minor changes

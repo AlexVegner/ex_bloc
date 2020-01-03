@@ -28,7 +28,7 @@ packages:
       name: bloc
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0"
+    version: "3.0.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -63,7 +63,7 @@ packages:
       name: coverage
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.4"
+    version: "0.13.3+3"
   crypto:
     dependency: transitive
     description:
@@ -78,13 +78,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.16.1"
-  effective_dart:
-    dependency: "direct dev"
-    description:
-      name: effective_dart
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.1"
   front_end:
     dependency: transitive
     description:
@@ -141,20 +134,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.1+1"
-  json_annotation:
-    dependency: transitive
-    description:
-      name: json_annotation
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.0.0"
-  json_rpc_2:
-    dependency: transitive
-    description:
-      name: json_rpc_2
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.1.0"
   kernel:
     dependency: transitive
     description:
@@ -162,13 +141,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.3.27"
-  lcov:
-    dependency: transitive
-    description:
-      name: lcov
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "5.5.0"
   logging:
     dependency: transitive
     description:
@@ -182,7 +154,7 @@ packages:
       name: matcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.5"
+    version: "0.12.6"
   meta:
     dependency: transitive
     description:
@@ -280,7 +252,7 @@ packages:
       name: rxdart
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.22.6"
+    version: "0.23.1"
   shelf:
     dependency: transitive
     description:
@@ -364,28 +336,21 @@ packages:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.0"
+    version: "1.9.4"
   test_api:
     dependency: transitive
     description:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.8"
+    version: "0.2.11"
   test_core:
     dependency: transitive
     description:
       name: test_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.10"
-  test_coverage:
-    dependency: "direct dev"
-    description:
-      name: test_coverage
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.4"
+    version: "0.2.15"
   typed_data:
     dependency: transitive
     description:
@@ -400,13 +365,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.2"
-  vm_service_client:
-    dependency: transitive
-    description:
-      name: vm_service_client
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.6+3"
   watcher:
     dependency: transitive
     description:
