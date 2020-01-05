@@ -1,4 +1,3 @@
-
 import 'package:ex_bloc/ex_bloc.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
@@ -24,6 +23,17 @@ void main() {
     final eventIn = MyExEvent();
     final bloc = ExBlocImpl();
     final eventOutFuture = ExStore.instance.wait<MyExEvent>();
+    expect(eventOutFuture, completion(equals(eventIn)));
+    ExStore.instance.dispatch(eventIn);
+    await untilCalled(eventIn.call(any, any));
+    verify(eventIn.call(ExStore.instance, bloc)).called(1);
+    verifyNoMoreInteractions(eventIn);
+  });
+
+  test('whait where', () async {
+    final eventIn = MyExEvent();
+    final bloc = ExBlocImpl();
+    final eventOutFuture = ExStore.instance.waitWhere((event) => event is MyExEvent, timeLimit: Duration(seconds: 1));
     expect(eventOutFuture, completion(equals(eventIn)));
     ExStore.instance.dispatch(eventIn);
     await untilCalled(eventIn.call(any, any));

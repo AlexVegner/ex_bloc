@@ -6,7 +6,7 @@ import './ex_bloc.dart';
 import 'ex_event.dart';
 
 class ExStore {
-  StreamController _streamController;
+  final StreamController _streamController;
 
   /// Controller for the event bus stream.
   StreamController get streamController => _streamController;
@@ -26,8 +26,24 @@ class ExStore {
     }
   }
 
-  Future<T> wait<T>() {
-    return on<T>().first;
+  Stream<T> where<T>(bool Function(T) test) {
+    return streamController.stream.where(test).cast<T>();
+  }
+
+  Future<T> wait<T>({Duration timeLimit}) {
+    if (timeLimit != null) {
+      return on<T>().timeout(timeLimit).first;
+    } else {
+      return on<T>().first;
+    }
+  }
+
+  Future<T> waitWhere<T>(bool Function(T) test, {Duration timeLimit}) {
+    if (timeLimit != null) {
+      return where<T>(test).timeout(timeLimit).first;
+    } else {
+      return where<T>(test).first;
+    }
   }
 
   static ExStore get instance => _singleton;
@@ -40,11 +56,8 @@ class ExStore {
 
   Map<Type, ExBloc> stateMap = {};
 
-  final List<ExEventHandler> handlers = [];
-
   void dispatchAll(List<ExEvent> events) {
     if (enabled) {
-      events.forEach((e) => dispatch(e));
       streamController.addStream(Stream.fromIterable(events));
     }
   }
@@ -52,9 +65,6 @@ class ExStore {
   void dispatch(ExEvent event) {
     if (enabled) {
       streamController.add(event);
-      stateMap.forEach((key, bloc) {
-        bloc.handleEvent(event);
-      });
     }
   }
 
@@ -64,15 +74,11 @@ class ExStore {
     stateMap[typeOf<State>()] = bloc;
   }
 
-  void remove<State>(ExEventHandler eventHandler) {
+  void remove<State>(ExBloc eventHandler) {
     stateMap.remove(typeOf<State>());
   }
 
   void destroy() {
     _streamController.close();
   }
-}
-
-abstract class ExEventHandler {
-  void handleEvent(ExEvent event);
 }

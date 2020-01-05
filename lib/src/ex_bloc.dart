@@ -5,13 +5,12 @@ import 'package:bloc/bloc.dart';
 import './ex_event.dart';
 import './ex_store.dart';
 
-abstract class ExBloc<Event extends ExEvent, State> extends Bloc<Event, State>
-    implements ExEventHandler {
+abstract class ExBloc<Event extends ExEvent, State> extends Bloc<Event, State> {
   StreamSubscription<Event> _subscription;
   ExBloc() : super() {
     ExStore.instance.add<State>(this);
     _subscription =
-        ExStore.instance.on<Event>().listen((Event event) => this.add(event));
+        ExStore.instance.on<Event>().listen((Event event) => add(event));
     if (initialEvents.isNotEmpty) {
       initialEvents.forEach((e) {
         ExStore.instance.dispatch(e);
@@ -26,13 +25,6 @@ abstract class ExBloc<Event extends ExEvent, State> extends Bloc<Event, State>
     ExStore.instance.remove<State>(this);
     _subscription.cancel();
     return super.close();
-  }
-
-  @override
-  void handleEvent(ExEvent event) {
-    if (event is Event) {
-      add(event);
-    }
   }
 
   @override

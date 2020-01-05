@@ -72,6 +72,22 @@ final store = ExStore.instance;
 final testState = store.getState<TestState>();
 ```
 
+
+# Subscribe event
+
+```dart
+final _subscribeSpecific = ExStore.instance.on<TestEvent>().listen((e) => print('do something'));
+final _subscribeAny = ExStore.instance.on().listen((e) => print('do something'));
+_subscribeSpecific.cancel();
+_subscribeAny.cancel();
+```
+
+# Wait for event
+
+```dart
+await ExStore.instance.wait<TestEvent>();
+```
+
 # Reselect usage
 
 [Reselect](https://pub.dev/packages/reselect) can be used if needed

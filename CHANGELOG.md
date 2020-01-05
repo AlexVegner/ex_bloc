@@ -1,3 +1,32 @@
+## 0.2.15
+
+* Minor changes
+
+## 0.2.14
+
+* Fix event multi dispatch
+
+## 0.2.13
+
+* Minor changes
+
+## 0.2.12
+
+* Minor changes
+
+## 0.2.11
+
+* Add waitWhere
+* Add timelimit for wait and waitWhere
+
+## 0.2.10
+
+* Update readme
+
+## 0.2.9
+
+* Minor changes
+
 ## 0.2.8
 
 * Move to event stream
