@@ -9,3 +9,5 @@ abstract class ExEvent<S, B> {
     ExStore.instance.dispatch(this);
   }
 }
+
+abstract class ExStateEvent {}

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 
+import '../ex_bloc.dart';
 import './ex_event.dart';
 import './ex_store.dart';
 
@@ -18,6 +19,8 @@ abstract class ExBloc<Event extends ExEvent, State> extends Bloc<Event, State> {
     }
   }
 
+  bool get sync => false;
+
   List<Event> get initialEvents => [];
 
   @override
@@ -29,7 +32,17 @@ abstract class ExBloc<Event extends ExEvent, State> extends Bloc<Event, State> {
 
   @override
   Stream<State> mapEventToState(ExEvent event) async* {
+    // if (sync || event is ExStateEvent) {
     yield* event.call(ExStore.instance, this);
+    // } else {
+    //   runAsync(event);
+    // }
+  }
+
+  Future<void> runAsync(ExEvent event) async {
+    await for (State state in event.call(ExStore.instance, this)) {
+
+    }
   }
 }
 

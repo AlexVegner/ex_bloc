@@ -1,3 +1,7 @@
+## 0.3.0
+
+* Update to bloc 4.0
+
 ## 0.2.15
 
 * Minor changes
